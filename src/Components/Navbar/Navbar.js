@@ -1,15 +1,26 @@
 import React from 'react'
+import { useRef } from 'react';
 import './Navbar.css';
 import { BiHome, BiUser, BiFile, BiBriefcase, BiImage, BiPhone } from 'react-icons/bi';
 import { FiX, FiMoon } from 'react-icons/fi';
 import { IoMenu } from 'react-icons/io5';
 
 const Navbar = () => {
+    const menubar = useRef();
+
+    const navOpen = ( ) => {
+        menubar.current.style.right = '0'
+    }
+
+    const navClose = () => {
+        menubar.current.style.right = '-100%'
+    }
+
   return (
-    <header class="header" id="header">
+    <header class="header">
     <nav class="nav container">
         <a href="#home" class="nav_logo">Sha.</a>
-        <div class="nav_menu" id="nav-menu">
+        <div class="nav_menu" ref={menubar}>
             <ul class="nav_list grid">
                 <li class="nav_item">
                     <a href="#home" class="nav_link">
@@ -42,14 +53,15 @@ const Navbar = () => {
                     </a>
                 </li>
             </ul>
-            <FiX className='nav_close'/>
+            <FiX className='nav_close' onClick={navClose} />
         </div>
-        <div class="nav_btns">
+        <div className="nav_btns">
+            
+            <div className="nav_toggle"  >
+               <IoMenu className='nav_open' onClick={navOpen}/>   
+            </div>
             {/* Theme change */}
             <FiMoon className='change-theme'/>
-            <div class="nav_toggle" id="nav-toggle">
-               <IoMenu/>
-            </div>
         </div>
     </nav>
     </header> 
