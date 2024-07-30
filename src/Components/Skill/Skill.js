@@ -3,6 +3,7 @@ import './Skill.css';
 import { PiBracketsCurlyBold } from 'react-icons/pi';
 import { BiServer } from 'react-icons/bi';
 import { FaSwatchbook } from 'react-icons/fa';
+import { FiArrowDown } from 'react-icons/fi';
 
 const Skill = () => {
   return (
@@ -19,7 +20,7 @@ const Skill = () => {
                         <h1 className="skills_title">Frontend Developer</h1>
                         <span className="skills_subtitle">-</span>
                     </div>
-                    <i className="uil uil-angle-down skills_arrow"></i>
+                    <FiArrowDown className='skills_arrow'/>
                 </div>
                 <div className="skills_list grid">
                     <div className="skill_data">
@@ -71,7 +72,7 @@ const Skill = () => {
                         <h1 className="skills_title">Backend Developer</h1>
                         <span className="skills_subtitle">-</span>
                     </div>
-                    <i className="uil uil-angle-down skills_arrow"></i>
+                    <FiArrowDown className='skills_arrow'/>
                 </div>
                 <div className="skills_list grid">
                     <div className="skill_data">
@@ -99,12 +100,12 @@ const Skill = () => {
             {/* <!-- skill 3 --> */}
             <div className="skills_content skills_close">
                 <div className="skills_header">
-                <FaSwatchbook/>
+                <FaSwatchbook className='skills_icon'/>
                     <div>
                         <h1 className="skills_title">Designer</h1>
                         <span className="skills_subtitle">-</span>
                     </div>
-                    <i className="uil uil-angle-down skills_arrow"></i>
+                    <FiArrowDown className='skills_arrow'/>
                 </div>
                 <div className="skills_list grid">
                     <div className="skill_data">
