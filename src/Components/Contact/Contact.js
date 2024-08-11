@@ -24,7 +24,7 @@ const Contact = () => {
                 </div>
             </div>
             <div className="contact_information">
-                <BiLocationPlus className='Contact_icon'/>
+                <BiLocationPlus className='contact_icon'/>
                 <div>
                     <h3 className="contact_title">Location</h3>
                     <span className="contact_subtitle">Thanjavur, Tamil Nadu</span>

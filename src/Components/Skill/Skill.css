@@ -26,9 +26,10 @@
     margin-left: auto;
     transition: .4s;
 }
+
 .skills_list{
     row-gap: 1.5rem;
-    padding-left: 2.7rem;
+    padding-left: 2.7rem; 
 }
 .skill_titles{
     display: flex;

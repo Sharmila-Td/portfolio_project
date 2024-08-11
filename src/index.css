@@ -18,6 +18,15 @@
     --body-color:hsl(var(--hue-color),60%,99%);
     --container-color:#fff;
 
+    /* Dark mode colors */
+    --dark-first-color: hsl(var(--hue-color), 69%, 61%);
+    --dark-title-color: hsl(var(--hue-color), 8%, 95%);
+    --dark-text-color: hsl(var(--hue-color), 8%, 75%);
+    --dark-text-color-light: hsl(var(--hue-color), 8%, 65%);
+    --dark-input-color: hsl(var(--hue-color), 29%, 16%);
+    --dark-body-color: hsl(var(--hue-color), 28%, 12%);
+    --dark-container-color: hsl(var(--hue-color), 29%, 16%);
+
     /* Font and Typography */
     --body-font:"Poppins", sans-serif;
 
@@ -47,6 +56,17 @@
     --z-tooltip:10;
     --z-fixed:100;
     --z-modal:100;
+}
+
+/* Dark mode */
+body.dark-theme {
+    --first-color: var(--dark-first-color);
+    --title-color: var(--dark-title-color);
+    --text-color: var(--dark-text-color);
+    --text-color-light: var(--dark-text-color-light);
+    --input-color: var(--dark-input-color);
+    --body-color: var(--dark-body-color);
+    --container-color: var(--dark-container-color);
 }
 
 /* font-size for large device */
@@ -119,4 +139,38 @@ img{
 .grid{
     display: grid;
     gap: 1.5rem;
+}
+/* buttons */
+.button{
+    display: inline-block;
+    background-color: var(--first-color);
+    color:#fff;
+    padding: 1rem;
+    border-radius: .5rem;
+    font-weight: var(--font-medium);
+}
+.button:hover{
+    background-color: var(--first-color-alt);
+}
+.button_icon{
+    font-size: 1.25rem;
+    margin-left: var(--mb-0-5);
+    transition: .3s;
+}
+.button-flex{
+    display: inline-block;
+    align-items: center;
+
+}
+.button-small{
+    padding: .75rem 1rem;
+}
+.button-link{
+    padding: 0;
+    background-color: transparent;
+    color: var(--first-color);
+}
+.button-link:hover{
+    background-color: transparent;
+    color: var(--first-color-alt);
 }

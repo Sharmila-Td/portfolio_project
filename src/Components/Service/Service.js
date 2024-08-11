@@ -1,120 +1,78 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Service.css';
-import { BiPencil, BiDownArrow, BiDesktop, BiServer } from 'react-icons/bi';
+import { BiDownArrow } from 'react-icons/bi';
+import ServiceData from './ServiceData';
+import {CgCheckO} from 'react-icons/cg';
+
+import { FiX } from 'react-icons/fi';
 
 const Service = () => {
+  const [activeModal, setActiveModal] = useState(-1);
+
+  const openModal = (index) => {
+    setActiveModal(index);
+  }
+
+  const closeModal = () => {
+    setActiveModal(-1)
+  }
   return (
+
     <section className="services section" id="service">
     <h2 className="section_title">Services</h2>
     <span className="section_subtitle">What i offer</span>
 
     <div className="services_container container grid">
-        {/* < Service 1  */}
-         <div className="services_content">
+    {ServiceData.map((service, index) => (
+          <div className="services_content" key={index}>
             <div>
-                <BiPencil className='services_icon'/>
-                
-                <h3 className="services_title">Ui/Ux <br/> Designer </h3>
+              <div className="services_icon"> {service.icon} </div>
+              <h3 className="services_title">
+                {service.title.split(" ").map((line, i) => (
+                  <React.Fragment key={i}>
+                    {line}
+                    <br />
+                  </React.Fragment>
+                ))}
+              </h3>
             </div>
-            <span className="button button-flex button-small button-link service_button">
-                view more
-                <BiDownArrow className='button_icon'/>
+            <span
+              className="button button-flex button-small button-link service_button"
+              onClick={() => openModal(index)}
+            >
+              view more
+             <BiDownArrow className='button_icon'/>
             </span>
-            <div className="services_modal">
-                <div className="services_modal-content">
-                    <h4 className="services_modal-title">Ui/Ux <br/> Designer</h4>
-                    <i className="uil uil-times services_modal-close"></i>
-                    <ul className="services_modal-services grid">
-                        <li className="services_modal-service">
-                            <i className="uil uil-check service_modal-icon"></i>
-                            <p>I develop the uer interface.</p>
-                        </li>
-                        <li className="services_modal-service">
-                            <i className="uil uil-check service_modal-icon"></i>
-                            <p>Web page development</p>
-                        </li>
-                        <li className="services_modal-service">
-                            <i className="uil uil-check service_modal-icon"></i>
-                            <p>I create ux element interactions</p>
-                        </li>
-                        <li className="services_modal-service">
-                            <i className="uil uil-check service_modal-icon"></i>
-                            <p>I positiion your company brand.</p>
-                        </li>
-                    </ul>
-                </div>
+
+            <div
+              className={`services_modal ${
+                activeModal === index ? "active-modal" : ""
+              }`}
+            >
+              <div className="services_modal-content">
+                <h4 className="services_modal-title">
+                  {service.title.split(" ").map((line, i) => (
+                    <React.Fragment key={i}>
+                      {line}
+                      <br />
+                    </React.Fragment>
+                  ))}
+                </h4>
+                 <FiX className='services_modal-close' onClick={closeModal}/> 
+                <ul className="services_modal-services grid">
+                  {service.description.map((desc, i) => (
+                    <li className="services_modal-service" key={i}>
+                       <CgCheckO className='services_icon'/>
+                      <p>{desc}</p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-         </div>
-         {/* <!-- Service 2 --> */}
-         <div className="services_content">
-            <div>
-                <BiDesktop className='services_icon'/>
-                <h3 className="services_title">Frontend <br/> Developer </h3>
-            </div>
-            <span className="button button-flex button-small button-link service_button">
-                view more
-                <BiDownArrow className='button_icon'/>
-            </span>
-            <div className="services_modal">
-                <div className="services_modal-content">
-                    <h4 className="services_modal-title">Frontend <br/> Developer </h4>
-                    <i className="uil uil-times services_modal-close"></i>
-                    <ul className="services_modal-services grid">
-                        <li className="services_modal-service">
-                            <i className="uil uil-check service_modal-icon"></i>
-                            <p>I develop the uer interface.</p>
-                        </li>
-                        <li className="services_modal-service">
-                            <i className="uil uil-check service_modal-icon"></i>
-                            <p>Web page development</p>
-                        </li>
-                        <li className="services_modal-service">
-                            <i className="uil uil-check service_modal-icon"></i>
-                            <p>I create ux element interactions</p>
-                        </li>
-                        <li className="services_modal-service">
-                            <i className="uil uil-check service_modal-icon"></i>
-                            <p>I positiion your company brand.</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-         </div>
-         {/* <!-- Service 3 --> */}
-         <div className="services_content">
-            <div>
-                <BiServer className='services_icon'/>
-                <h3 className="services_title">Backend <br/> Developer </h3>
-            </div>
-            <span className="button button-flex button-small button-link service_button">
-                view more
-                <BiDownArrow className='button_icon'/>
-            </span>
-            <div className="services_modal">
-                <div className="services_modal-content">
-                    <h4 className="services_modal-title"> Backend <br/> Developer</h4>
-                    <i className="uil uil-times services_modal-close"></i>
-                    <ul className="services_modal-services grid">
-                        <li className="services_modal-service">
-                            <i className="uil uil-check service_modal-icon"></i>
-                            <p>I develop the uer interface.</p>
-                        </li>
-                        <li className="services_modal-service">
-                            <i className="uil uil-check service_modal-icon"></i>
-                            <p>Web page development</p>
-                        </li>
-                        <li className="services_modal-service">
-                            <i className="uil uil-check service_modal-icon"></i>
-                            <p>I create ux element interactions</p>
-                        </li>
-                        <li className="services_modal-service">
-                            <i className="uil uil-check service_modal-icon"></i>
-                            <p>I positiion your company brand.</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-         </div>
+           
+          </div>
+        ))}
+        
     </div>
 </section>
   )
