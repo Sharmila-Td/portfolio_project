@@ -2,6 +2,7 @@ import React from 'react';
 import './About.css';
 import profile from '../assests/Image/profile2.webp';
 import { FiArrowDown } from 'react-icons/fi';
+import resume from '../assests/resume/resume.pdf';
 
 
 const About = () => {
@@ -31,7 +32,7 @@ const About = () => {
                             </div>
                         </div>
                         <div className="about_buttons">
-                            <a download="" href="../assests/resume/Sharmi Resume-2024.pdf" className="button button-flex">
+                            <a download="Resume" href={resume} className="button button-flex">
                                 Download CV <FiArrowDown/>
                             </a>
                         </div>
@@ -39,6 +40,6 @@ const About = () => {
                 </div>
             </section>
   )
-};
+}
 
 export default About
