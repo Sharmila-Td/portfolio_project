@@ -26,7 +26,7 @@ const Home = () => {
             <div className="home_data">
                 <h1 className="home_title">Hi, I'm Sharmila</h1>
                 <h3 className="home_subtitle">Fronted developer</h3>
-                <p className="home_description">Lorem ipsum dolor sit amet, consectetur adipsantium repudiandae deleniti doloribus fugit consequatur temporibus dolores tempore, ab obcaecati odio cum pariatur dolorem sapiente modi? Quaerat?</p>
+                <p className="home_description"> Passionate about building responsive and interactive web applications with React. Take a look at my portfolio for a glimpse of my work </p>
                 <a href="#contact" className="button button-flex">
                     Contact Me
                 </a>
