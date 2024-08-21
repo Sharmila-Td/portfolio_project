@@ -20,7 +20,7 @@ const Contact = () => {
                 <BiEnvelope className='contact_icon'/>
                 <div>
                     <h3 className="contact_title">Email</h3>
-                    <span className="contact_subtitle">sharmi.webdev@gmail.com</span>
+                    <span className="contact_subtitle">sharmilathirupathi28@gmail.com</span>
                 </div>
             </div>
             <div className="contact_information">
